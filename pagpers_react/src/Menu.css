@@ -1,0 +1,27 @@
+nav{
+	background-color:#ddd;
+}
+nav ul{
+	display:flex;
+	padding:0;
+	margin:0;
+}
+nav li{
+	border:1px solid #000;
+	list-style:none;
+	flex-grow:1;
+	text-align:center;
+}
+nav a{
+	display:block;
+	text-decoration:none;
+	color:red;
+}
+nav a:hover{
+	color:black;
+	background-color:red;
+	font-size:20px;
+}
+nav a:visited{
+	color:black;
+}

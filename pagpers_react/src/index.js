@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Cabecera from './Cabecera';
+import Menu from './Menu';
+import Formulario from './Formulario';
+import MenuLateral from './MenuLateral';
+import Piesesito from './Piesesito';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ 	<Cabecera />
+	<Menu />
+	<Formulario />
+	<MenuLateral />
+	<Piesesito />
+ </React.StrictMode>,
   document.getElementById('root')
 );
 

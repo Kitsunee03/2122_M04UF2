@@ -1,0 +1,14 @@
+h1{
+	font-family: 'Ubuntu Condensed';
+	margin:0;
+	font-size:2em;
+}
+#contact_form ul{
+	list-style:none;
+	padding:0;
+	background-color:#ddd;
+}
+#contact_form li {
+	flex: auto;
+	padding:3px;
+}

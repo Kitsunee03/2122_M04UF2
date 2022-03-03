@@ -1,0 +1,12 @@
+.estructura_cuerpo{
+	background-color:#333;
+	color:#fff;
+	padding:12px 0 12px 0;
+}
+footer h2{
+	display:none;
+}
+footer p{
+	margin:1;
+	text-align:center;
+}
