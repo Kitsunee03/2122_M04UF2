@@ -1,3 +1,4 @@
+import './Piesito.css';
 function Piesito ()
 {
 	return (

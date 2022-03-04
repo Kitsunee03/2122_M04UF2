@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Titulito from './Titulito';
+import Menu from './Menu';
 import Piesito from './Piesito';
 
 ReactDOM.render(
   <React.StrictMode>
   	<Titulito />
+	<Menu />
     <App />
 	<Piesito />
   </React.StrictMode>,
