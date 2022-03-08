@@ -1,5 +1,5 @@
 {
-  "name": "pagpers_react",
+  "name": "personalpag_react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,18 +34,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kitsunee03/2122_M04UF2.git"
-  },
-  "author": "Kitsune",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/Kitsunee03/2122_M04UF2/issues"
-  },
-  "homepage": "https://github.com/Kitsunee03/2122_M04UF2#readme"
+  }
 }
