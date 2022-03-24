@@ -1,7 +1,22 @@
+import React from 'react';
 
-function RemoveTask(props) {
-	return(
-		<button>Eliminar</button>
-	);
+class RemoveTask extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			task: "",
+			index: props.index
+		};
+	}
+
+	HandleOnRemove = (event) => {
+		this.props.handleOnRemove(this.state.index);
+	}
+	
+	render() {
+		return(
+			<button onClick={this.HandleOnRemove}>Eliminar</button>
+		);
+	}
 }
 export default RemoveTask;
