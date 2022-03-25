@@ -1,6 +1,6 @@
 import React from 'react';
 import Task from './Task';
-import './List.css'
+import Lista from '@mui/material/List';
 
 class List extends React.Component {
 	constructor(props) {
@@ -10,7 +10,7 @@ class List extends React.Component {
 		};
 	}
 
-	HandleOnRemove = (index) => {
+	HandleOnRemove = index => {
 		this.state.tasks.splice(index,1);
 		this.setState({tasks : this.state.tasks});
 	}
@@ -19,10 +19,10 @@ class List extends React.Component {
 		let t = this.state.tasks;
 		let tasks = [];
 		for (let i = 0; i < t.length; i++){
-			tasks.push(<Task task={t[i]} key={i} index={i} handleOnRemove={this.HandleOnRemove} />);
-		}
-	
-		return ( <ul> {tasks} </ul>	);
+			tasks.push( <Task task={t[i]} key={i} index={i} 
+				handleOnRemove={this.HandleOnRemove} />);
+		}	
+		return ( <Lista> {tasks} </Lista> );
 	}
 }
 export default List;

@@ -1,3 +1,4 @@
+import TextField from '@mui/material/TextField';
 import React from 'react';
 
 class Input extends React.Component {
@@ -8,7 +9,7 @@ class Input extends React.Component {
 		};
 	}
 
-	handleChange = (event)=> {
+	handleChange = event => {
 		this.props.handleChange(event);
 		this.setState({
 			value: event.target.value
@@ -17,9 +18,8 @@ class Input extends React.Component {
 
 	render(){
 		return(
-			<label htmlFor="newTaskInput">Tarea:
-				<input type= "text" id= "newTaskInput" onChange={this.handleChange}/>
-			</label>
+			<TextField label="Tarea" size="small" id="newTaskInput" variant="filled" 
+					onChange={this.handleChange} value={this.props.value} />
 		);
 	}
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+//import './App.css';
 import Title from './Title';
 import Formulario from './Formulario';
 import Lista from './List';

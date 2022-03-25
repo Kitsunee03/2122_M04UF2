@@ -11,7 +11,7 @@ class  Formulario extends React.Component {
 		};
 	}
 
-	handleSubmit = (event) => {
+	handleSubmit = event => {
 		event.preventDefault();
 		this.props.addTask(this.state.task);
 
@@ -20,13 +20,13 @@ class  Formulario extends React.Component {
 			task: this.state.task
 		})
 	}
-	handleChange = (event) => {
+	handleChange = event => {
 		this.setState({
 			task: event.target.value
 		});
 	}
 
-	render(){
+	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
 				<Input handleChange={this.handleChange} />

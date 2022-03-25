@@ -1,11 +1,12 @@
+import ListItem from '@mui/material/ListItem';
 import RemoveTask from './removeTask';
 
 function Task(props) {
 	return(
-		<li> 
+		<ListItem> 
 			{props.task} 
 			<RemoveTask index={props.index} handleOnRemove={props.handleOnRemove}/> 
-		</li>
+		</ListItem>
 	);
 }
 export default Task;

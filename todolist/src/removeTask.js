@@ -1,3 +1,5 @@
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 import React from 'react';
 
 class RemoveTask extends React.Component {
@@ -15,7 +17,8 @@ class RemoveTask extends React.Component {
 	
 	render() {
 		return(
-			<button onClick={this.HandleOnRemove}>Eliminar</button>
+			<Button variant="contained" color="error" endIcon={<DeleteIcon/>} size="small" 
+				onClick={this.HandleOnRemove}>Eliminar</Button>
 		);
 	}
 }
