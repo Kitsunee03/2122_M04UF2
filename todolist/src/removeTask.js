@@ -1,5 +1,10 @@
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
+
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogTitle from '@mui/material/DialogTitle';
+
 import React from 'react';
 
 class RemoveTask extends React.Component {
@@ -7,18 +12,39 @@ class RemoveTask extends React.Component {
 		super(props);
 		this.state = {
 			task: "",
-			index: props.index
+			index: props.index,
+			open: false
 		};
+	}
+	
+	handleOnClick = ()=>{
+		this.setState({open: true });
+	}
+
+	handleClose = () => {
+		this.setState({open:false});
 	}
 
 	HandleOnRemove = (event) => {
 		this.props.handleOnRemove(this.state.index);
+		this.setState({open:false});
 	}
 	
 	render() {
 		return(
-			<Button variant="contained" color="error" endIcon={<DeleteIcon/>} size="small" 
-				onClick={this.HandleOnRemove}>Eliminar</Button>
+			<div>
+				<Button variant="contained" endIcon=<DeleteIcon /> 
+					onClick={this.handleOnClick}>Eliminar</Button>
+
+				<Dialog	open={this.state.open} onClose={this.handleClose}>
+					<DialogTitle>{'Tas seguro??'}</DialogTitle>
+
+					<DialogActions>
+						<Button onClick={this.HandleOnRemove}>Eliminar!</Button>
+						<Button onClick={this.handleClose}>Era broma poma</Button>
+					</DialogActions>
+				</Dialog>
+			</div>
 		);
 	}
 }
