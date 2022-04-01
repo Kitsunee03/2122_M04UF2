@@ -10,6 +10,17 @@ class App extends React.Component {
 		this.state = {
 			tasks: ["Beber Monster", "Instalar Linux"]			
 		};
+
+		fetch("http://192.168.1.77:3030/")
+			.then(response => response.json())
+			.then(data => this.setTasks(data));
+	}
+
+	setTasks = data =>
+		this.state.tasks = data;
+		this.setState({	
+			tasks: this.state.tasks
+		});
 	}
 
 	addTask = task => {
