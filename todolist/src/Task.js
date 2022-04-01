@@ -2,10 +2,10 @@ import ListItem from '@mui/material/ListItem';
 import RemoveTask from './removeTask';
 
 function Task(props) {
-	return(
+	return (
 		<ListItem> 
 			{props.task} 
-			<RemoveTask index={props.index} handleOnRemove={props.handleOnRemove}/> 
+			<RemoveTask id_task={props.id_task} removeTask={props.removeTask}/> 
 		</ListItem>
 	);
 }

@@ -28,9 +28,9 @@ class  Formulario extends React.Component {
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
-				<Input handleChange={this.handleChange} />
-				<TaskSubmit />
+			<form onSubmit={this.handleSubmit} >
+				<Input value={this.state.task} handleChange={this.handleChange} />
+				<TaskSubmit HandleOnSubmit={this.handleSubmit} />
 			</form>
 		);
 	}

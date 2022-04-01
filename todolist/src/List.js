@@ -19,8 +19,8 @@ class List extends React.Component {
 		let t = this.state.tasks;
 		let tasks = [];
 		for (let i = 0; i < t.length; i++){
-			tasks.push( <Task task={t[i]} key={i} index={i} 
-				handleOnRemove={this.HandleOnRemove} />);
+			tasks.push( <Task task={t[i]} key={i} id_task={i} 
+				removeTask={this.props.removeTask} />);
 		}	
 		return ( <Lista> {tasks} </Lista> );
 	}

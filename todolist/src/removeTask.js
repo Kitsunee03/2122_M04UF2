@@ -11,13 +11,11 @@ class RemoveTask extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			task: "",
-			index: props.index,
 			open: false
 		};
 	}
 	
-	handleOnClick = ()=>{
+	handleOnClick = () => {
 		this.setState({open: true });
 	}
 
@@ -25,23 +23,29 @@ class RemoveTask extends React.Component {
 		this.setState({open:false});
 	}
 
-	HandleOnRemove = (event) => {
-		this.props.handleOnRemove(this.state.index);
+	handleDelete = () => {
+		this.props.removeTask(this.props.task_id);
 		this.setState({open:false});
 	}
 	
 	render() {
-		return(
+		return (
 			<div>
-				<Button variant="contained" endIcon=<DeleteIcon /> 
-					onClick={this.handleOnClick}>Eliminar</Button>
+				<Button color="error" variant="contained" 
+					endIcon=<DeleteIcon /> 
+					onClick={this.handleOnClick}>Eliminar
+				</Button>
 
 				<Dialog	open={this.state.open} onClose={this.handleClose}>
 					<DialogTitle>{'Tas seguro??'}</DialogTitle>
 
 					<DialogActions>
-						<Button onClick={this.HandleOnRemove}>Eliminar!</Button>
-						<Button onClick={this.handleClose}>Era broma poma</Button>
+						<Button color="error" onClick={this.handleDelete}>
+							Eliminar!
+						</Button>
+						<Button onClick={this.handleClose}>
+							Era broma poma
+						</Button>
 					</DialogActions>
 				</Dialog>
 			</div>

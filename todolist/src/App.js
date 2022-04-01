@@ -8,7 +8,7 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			tasks: ["Beber Monster","Instalar Linux"]			
+			tasks: ["Beber Monster", "Instalar Linux"]			
 		};
 	}
 
@@ -19,13 +19,20 @@ class App extends React.Component {
 		});
 	}
 
+	removeTask = id_task => {
+		this.state.tasks.splice(id_task, 1);
+		this.setState({
+			tasks: this.state.tasks
+		});
+	}
+
 	render() {
   		return (
     		<div className="App">
 				<Title />
 				<fieldset>
 					<Formulario addTask={this.addTask} />
-					<Lista tasks={this.state.tasks} />
+					<Lista tasks={this.state.tasks} removeTask={this.removeTask} />
 				</fieldset>
 			</div>
   		);
