@@ -16,7 +16,7 @@ class App extends React.Component {
 			.then(data => this.setTasks(data));
 	}
 
-	setTasks = data =>
+	setTasks = data => {
 		this.state.tasks = data;
 		this.setState({	
 			tasks: this.state.tasks
