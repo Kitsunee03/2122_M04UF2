@@ -15,17 +15,17 @@ class RemoveTask extends React.Component {
 		};
 	}
 	
-	handleOnClick = () => {
+	openDialog = () => {
 		this.setState({open: true });
 	}
 
-	handleClose = () => {
-		this.setState({open:false});
+	closeDialog = () => {
+		this.setState({open: false});
 	}
 
-	handleDelete = () => {
-		this.props.removeTask(this.props.task_id);
-		this.setState({open:false});
+	removeTask = () => {
+		this.props.removeTask(this.props.id_task);
+		this.closeDialog();
 	}
 	
 	render() {
@@ -33,17 +33,17 @@ class RemoveTask extends React.Component {
 			<div>
 				<Button color="error" variant="contained" 
 					endIcon=<DeleteIcon /> 
-					onClick={this.handleOnClick}>Eliminar
+					onClick={this.openDialog}>Eliminar
 				</Button>
 
-				<Dialog	open={this.state.open} onClose={this.handleClose}>
+				<Dialog	open={this.state.open} onClose={this.closeDialog}>
 					<DialogTitle>{'Tas seguro??'}</DialogTitle>
 
 					<DialogActions>
-						<Button color="error" onClick={this.handleDelete}>
+						<Button color="error" onClick={this.removeTask}>
 							Eliminar!
 						</Button>
-						<Button onClick={this.handleClose}>
+						<Button onClick={this.closeDialog}>
 							Era broma poma
 						</Button>
 					</DialogActions>
