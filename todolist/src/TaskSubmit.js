@@ -11,11 +11,15 @@ class  TaskSubmit extends React.Component {
 		}
 	}
 
+	handleSubmit = event => {
+		event.preventDefault();
+		this.props.onSubmit(event);
+	}
+
 	render() {
 		return (
 			<Tooltip title="Add" >
-				<Button variant="contained" size="large" color="success" onClick={this.props.HandleOnSubmit}>
-					<Icon/>
+				<Button variant="contained" size="large" color="success" onClick={this.handleSubmit}>					<Icon/>
 				</Button>
 			</Tooltip>
 		);

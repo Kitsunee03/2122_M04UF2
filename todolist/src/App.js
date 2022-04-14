@@ -8,12 +8,13 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			tasks: []			
+			tasks:[],
+			tasks_id:[]				
 		};
 	}
 
 	componentWillMount() {
-		fetch("http://10.40.0.241:3030/")
+		fetch("http://192.168.1.77:3030")
 			.then(response => response.json())
 			.then(data => this.setTasks(data));
 	}
@@ -22,27 +23,35 @@ class App extends React.Component {
 	setTasks = data => {
 		for (let i = 0; i < data.length; i++) {
 			this.state.tasks.push(data[i].task);
+			this.state.tasks_id.push(data[i]._id);
 		}
-		this.setState({
-			tasks: this.state.tasks
-		});
-	};
-
-	addTask = task => {
-		this.state.tasks.push(task);
-		this.setState({	
-			tasks: this.state.tasks
-		});
-		fetch('http://10.40.0.241:3030/', {
-			method: 'POST',
-			body: '{"task":"'+task+'"}'
-		});	
+		this.setState({	tasks: this.state.tasks });
 	}
 
-	removeTask = id_task => {
-		this.state.tasks.splice(id_task, 1);
+	addTask = task =>{	
+		fetch("http://192.168.1.77:3030", {
+			method:"POST",
+			body: '{"tasks":"' +task+'", "remove":"false"}'
+		})
+	 	.then(response => response.json() )
+     		.then(data => {let id = data[0]["_id"]
+
+			this.state.tasks.push(task);
+			this.state.tasks_id.push(id);
+
+			this.setState({	tasks: this.state.tasks	});
+		});
+	}
+
+	removeTask = (task,  key, id_task) => {
+		this.state.tasks.splice(key, 1);
 		this.setState({
 			tasks: this.state.tasks
+		});
+		
+		fetch("http://192.168.1.77:3030/", {
+			method:"POST",
+			body: '{"task_id":"'+id_task+'", "remove":"true"}'
 		});
 	}
 
@@ -52,7 +61,7 @@ class App extends React.Component {
 				<Title />
 				<fieldset>
 					<Formulario addTask={this.addTask} />
-					<Lista tasks={this.state.tasks} removeTask={this.removeTask} />
+					<Lista tasks={this.state.tasks} tasks_id={this.state.tasks_id} removeTask={this.removeTask} />
 				</fieldset>
 			</div>
   		);

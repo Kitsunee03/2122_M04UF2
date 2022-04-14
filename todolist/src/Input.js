@@ -5,7 +5,7 @@ class Input extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			value: props.value
+			value:""
 		};
 	}
 
@@ -14,12 +14,17 @@ class Input extends React.Component {
 		this.setState({
 			value: event.target.value
 		});
+		event.preventDefault();
 	}
 
 	render() {
 		return(
-			<TextField label="Tarea" size="small" variant="filled" 
-					onChange={this.handleChange} value={this.props.value} />
+			<TextField id="task_input" 
+				label="Tarea" size="small" variant="filled" 
+				value={this.state.value}  
+				onChange={this.handleChange}
+				onSubmit={this.handleSubmit}
+			/>
 		);
 	}
 }
