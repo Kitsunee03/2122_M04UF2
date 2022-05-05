@@ -19,7 +19,7 @@ class  TaskSubmit extends React.Component {
 	render() {
 		return (
 			<Tooltip title="Add" >
-				<Button variant="contained" size="large" color="success" onClick={this.handleSubmit}>					<Icon/>
+				<Button id="task_submit" variant="contained" size="large" color="inherit" onClick={this.handleSubmit}>					<Icon/>
 				</Button>
 			</Tooltip>
 		);

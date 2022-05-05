@@ -20,7 +20,7 @@ class Input extends React.Component {
 	render() {
 		return(
 			<TextField id="task_input" 
-				label="Tarea" size="small" variant="filled" 
+				label="Tarea" size="small" variant="filled" fullWidth={true}
 				value={this.state.value}  
 				onChange={this.handleChange}
 				onSubmit={this.handleSubmit}
